@@ -30,6 +30,37 @@ const scrollFunction = () => {
 
 window.onscroll = () => { scrollFunction() };
 /* END 1-A -- UP BUTTON */
+
+/* 2-B -- HOVERING ON CIRCLES */
+const hover = () => {
+
+    $circles.each( function(){
+        let $id = $(this).attr('id');
+        let id = $(`#${$id}-caption-content`);
+        
+        $(this).mouseenter(() => {
+            if ($('#contact.circle').hasClass('clicked') || $('#bio.circle').hasClass('clicked')) {
+                return;
+            } else if (!$(this).hasClass('clicked')) {
+                id.addClass('active');
+                $(this).css({"z-index": "11"});
+                $('#contact-caption-content p').css('display', 'none');
+            }
+        });
+        if (id != '#contact-caption-content') {
+            console.log('TEST OF SOME KIND')
+            $(this).mouseleave(() => {
+                id.removeClass('active');
+                $(this).css({"z-index": ""});
+                
+            }) 
+        } else {
+            return;
+        }
+    })  
+}
+/* END 2-B -- HOVERING ON CIRCLES */
+
 /* 2-E -- BIO CIRCLE ACTION */
 const bio = () => {
     let $bio = $('#bio');

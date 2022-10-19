@@ -31,15 +31,15 @@ const scrollFunction = () => {
 window.onscroll = () => { scrollFunction() };
 /* END 1-A -- UP BUTTON */
 
-/* 2-B -- HOVERING ON CIRCLES */
+/* 2-B -- HOVERING ON SQUARES */
 const hover = () => {
 
-    $circles.each( function(){
+    $squares.each( function(){
         let $id = $(this).attr('id');
         let id = $(`#${$id}-caption-content`);
         
         $(this).mouseenter(() => {
-            if ($('#contact.circle').hasClass('clicked') || $('#bio.circle').hasClass('clicked')) {
+            if ( $('#bio.square').hasClass('clicked')) {
                 return;
             } else if (!$(this).hasClass('clicked')) {
                 id.addClass('active');
@@ -59,9 +59,9 @@ const hover = () => {
         }
     })  
 }
-/* END 2-B -- HOVERING ON CIRCLES */
+/* END 2-B -- HOVERING ON SQUARES */
 
-/* 2-E -- BIO CIRCLE ACTION */
+/* 2-E -- BIO SQUARE ACTION */
 const bio = () => {
     let $bio = $('#bio');
     if($bio.hasClass('clicked')) {

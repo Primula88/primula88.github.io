@@ -21,6 +21,7 @@
         --bio-pic: url(./img/bio-pic.jpg);
         --github-pic: url(./img/github.jpg);
         --contact-pic: url(./img/contact.jpg);
+        --boba-pic: url(./img/boba.jpg);
 
         /*SHADOWS */
 
@@ -48,6 +49,8 @@
 
 
         }
+
+
 
     html {
         height: 100%;
@@ -85,6 +88,7 @@
     font-style: italic;
 }
 
+
 /* END HEADER */
 
 /* SQUARES */
@@ -116,6 +120,51 @@
 }
 
 /* END SQUARES */
+
+/* HEARTS */
+
+.heart {
+    position: relative;
+    width: 100px;
+    height: 90px;
+    margin-top: 10px;
+    filter: var(--shadow-1);
+    transition: 350ms filter ease-in-out,
+                350ms transform ease-in-out,
+                350ms border-radius ease-in-out,
+                750ms top ease-out,
+                750ms left ease-out,
+                750ms width ease-out,
+                750ms height ease-out,
+                750ms background-size ease-in-out;
+    
+  }
+  
+  .heart::before, .heart::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 52px;
+    height: 80px;
+    border-radius: 50px 50px 0 0;
+    background-color: red;
+  }
+  
+  .heart::before {
+    left: 50px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+  }
+  
+  .heart::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+  }
+
+
+  /* END HEARTS */ 
+
 
 /* BIO */
 
@@ -210,6 +259,51 @@ p.caption-p {
 
 /* END BIO */
 
+
+/* BOBA */
+
+#boba:hover {
+    transform: scale(1.2);
+    filter: var(--shadow-1b);
+}
+
+#boba.clicked:hover {
+    transform: initial;
+    filter: initial;
+}
+
+.content.boba {
+    display: none;
+    flex-flow: row;
+    background-image: var(--boba-pic);
+    background-size: contain;
+    height: 76%;
+    width: 22%;
+    color: white;
+    margin: 0 2vw;
+    font-size: 1.3vw;
+}
+
+.content.boba.clicked {
+    animation: fadeIn linear 500ms;
+    -webkit-animation: fadeIn linear 500ms;
+    -moz-animation: fadeIn linear 500ms;
+    -o-animation: fadeIn linear 500ms;
+    -ms-animation: fadeIn linear 500ms;
+}
+
+
+#boba-caption-content {
+    display: none;
+    flex-flow: column;
+}
+
+#boba-caption-content.active{
+    display: flex;
+}
+
+/* END BOBA */
+
 /* GITHUB */
 
 #github {
@@ -258,9 +352,8 @@ p.caption-p {
     text-align: center;
     height: 100%;
     width: 54%;
-    color: white;
     margin: 0 2vw;
-    font-size: 1.3vw;
+    font-size: 2.5vw;
 }
 
 .content.github.clicked {
@@ -281,6 +374,17 @@ p.caption-p {
     display: flex;
 }
 
+#github a { 
+    font-family: "Racing Sans One";
+    background-color: #add8e6;
+    padding: 1em 1.5em;
+    color: black;
+    text-decoration: none;
+    border-radius: 25%;
+    box-shadow: 0px 0px 2px 2px rgb(0,0,0);
+
+}
+
 
 /* END GITHUB */
 
@@ -293,7 +397,7 @@ p.caption-p {
     background-repeat: no-repeat;
     background-size: 5vw;
     background-position: left center;
-    left: 46vw;
+    left: 50vw;
     top: 8vh;
     width: 5vw;
     height: 5vw;
@@ -326,12 +430,13 @@ p.caption-p {
 
 .content.contact {
     display: none;
-    align-items: center;
+    align-items: left;
     text-align: left;
     height: 100%;
-    width: 54%;
+    width: 100%;
     color: white;
-    margin: 0 20vw;
+    padding-top: 15vw;
+    padding-left: 20vw;
     font-size: 1.6vw;
 }
 

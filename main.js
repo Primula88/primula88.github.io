@@ -174,11 +174,11 @@ const contact = () => {
                 /* IF NOT CLICKED ALREADY */
             $contact.css({  "border-radius": "15px",
                         "background-size": "15vw",
-                        "width": "65vw",
+                        "width": "40vw",
                         "height": "25vw",
                         "top": "14vh",
                         "left": "15vw",
-                        "z-index": "1000",
+                        "z-index": "1002",
                         "transition": "350ms filter ease-in-out, 350ms transform ease-in-out, 350ms border-radius ease-in-out, 750ms top ease-out, 750ms left ease-out, 500ms width ease-out, 750ms height ease-out, 350ms background-size ease-in-out"
                         })
             $contact.addClass('clicked');
@@ -192,6 +192,52 @@ const contact = () => {
         }
     }
 /*CONTACT SQUARE ACTION */
+
+/* BOBA HEART */ 
+
+const boba = () => {
+    let $boba = $('#boba');
+    if($boba.hasClass('clicked')) {
+        /* IF CLICKED ALREADY */
+        $boba.removeClass('clicked');
+        $boba.css({  "border-radius": "",
+                    "background-size": "",
+                    "top": "",
+                    "width": "",
+                    "height": "",
+                    "left": "",
+                    "z-index": "",
+                    "transition": "350ms filter ease-in-out, 350ms transform ease-in-out, 350ms border-radius ease-in-out, 750ms top ease-out, 750ms left ease-out, 500ms width ease-out, 750ms height ease-out, 750ms background-size ease-in-out"
+                });
+    const contentBoba = () => {
+        $('.content.boba').removeClass('clicked');
+        $('.content.boba').css({ "display": "none"});
+    }
+    setTimeout(contentBoba, 0);
+
+    } else {
+                /* IF NOT CLICKED ALREADY */
+            $boba.css({  "border-radius": "15px",
+                        "background-size": "15vw",
+                        "width": "65vw",
+                        "height": "25vw",
+                        "top": "14vh",
+                        "left": "15vw",
+                        "z-index": "1000",
+                        "transition": "350ms filter ease-in-out, 350ms transform ease-in-out, 350ms border-radius ease-in-out, 750ms top ease-out, 750ms left ease-out, 500ms width ease-out, 750ms height ease-out, 350ms background-size ease-in-out"
+                        })
+            $boba.addClass('clicked');
+            const contentBoba = () => {
+                if ($boba.hasClass('clicked')) { // Checks if the coast is clear
+                    $('.content.boba').addClass('clicked');
+                    $('.content.boba').css({ "display": "flex"});
+                }
+            }
+            setTimeout(contentBoba, 550);
+        }
+    }
+
+    /* END BOBA HEART */
 
 /* FUNCTION CALLS */
 assignIDs();

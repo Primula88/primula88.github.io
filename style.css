@@ -127,7 +127,7 @@
     position: relative;
     width: 100px;
     height: 90px;
-    margin-top: 10px;
+    margin-top: 700px;
     filter: var(--shadow-1);
     transition: 350ms filter ease-in-out,
                 350ms transform ease-in-out,
@@ -137,7 +137,7 @@
                 750ms width ease-out,
                 750ms height ease-out,
                 750ms background-size ease-in-out;
-    
+    z-index: 1000;
   }
   
   .heart::before, .heart::after {
@@ -274,14 +274,11 @@ p.caption-p {
 
 .content.boba {
     display: none;
-    flex-flow: row;
     background-image: var(--boba-pic);
-    background-size: contain;
-    height: 76%;
+    background-size: cover;
+    height: 100%;
     width: 22%;
     color: white;
-    margin: 0 2vw;
-    font-size: 1.3vw;
 }
 
 .content.boba.clicked {
@@ -292,15 +289,6 @@ p.caption-p {
     -ms-animation: fadeIn linear 500ms;
 }
 
-
-#boba-caption-content {
-    display: none;
-    flex-flow: column;
-}
-
-#boba-caption-content.active{
-    display: flex;
-}
 
 /* END BOBA */
 
@@ -501,3 +489,10 @@ p.caption-p {
 }
 
 /* ENDCAPTION SECTION*/
+
+
+@media (max-width: 600px) {
+    .content.contact {
+    font-size: 2vw;
+    }
+  }

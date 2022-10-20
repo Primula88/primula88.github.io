@@ -219,10 +219,10 @@ const boba = () => {
                 /* IF NOT CLICKED ALREADY */
             $boba.css({  "border-radius": "15px",
                         "background-size": "15vw",
-                        "width": "65vw",
-                        "height": "25vw",
-                        "top": "14vh",
-                        "left": "15vw",
+                        "width": "90vw",
+                        "height": "30vw",
+                        "top": "-40vh",
+                        "left": "30vw",
                         "z-index": "1000",
                         "transition": "350ms filter ease-in-out, 350ms transform ease-in-out, 350ms border-radius ease-in-out, 750ms top ease-out, 750ms left ease-out, 500ms width ease-out, 750ms height ease-out, 350ms background-size ease-in-out"
                         })

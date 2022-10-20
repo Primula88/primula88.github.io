@@ -44,10 +44,9 @@ const hover = () => {
             } else if (!$(this).hasClass('clicked')) {
                 id.addClass('active');
                 $(this).css({"z-index": "11"});
-                $('#contact-caption-content p').css('display', 'none');
             }
         });
-        if (id != '#contact-caption-content') {
+        if (id != '#blabla-caption-content') {
             console.log('TEST OF SOME KIND')
             $(this).mouseleave(() => {
                 id.removeClass('active');
@@ -90,7 +89,7 @@ const bio = () => {
                         "height": "25vw",
                         "top": "14vh",
                         "left": "15vw",
-                        "z-index": "1000",
+                        "z-index": "1002",
                         "transition": "350ms filter ease-in-out, 350ms transform ease-in-out, 350ms border-radius ease-in-out, 750ms top ease-out, 750ms left ease-out, 500ms width ease-out, 750ms height ease-out, 350ms background-size ease-in-out"
                         })
             $bio.addClass('clicked');
@@ -135,7 +134,7 @@ const github = () => {
                         "height": "25vw",
                         "top": "14vh",
                         "left": "15vw",
-                        "z-index": "1000",
+                        "z-index": "1002",
                         "transition": "350ms filter ease-in-out, 350ms transform ease-in-out, 350ms border-radius ease-in-out, 750ms top ease-out, 750ms left ease-out, 500ms width ease-out, 750ms height ease-out, 350ms background-size ease-in-out"
                         })
             $github.addClass('clicked');
@@ -149,6 +148,50 @@ const github = () => {
         }
     }
 /*GITHUB SQUARE ACTION */
+
+/* CONTACT SQUARE ACTION */
+const contact = () => {
+    let $contact = $('#contact');
+    if($contact.hasClass('clicked')) {
+        /* IF CLICKED ALREADY */
+        $contact.removeClass('clicked');
+        $contact.css({  "border-radius": "",
+                    "background-size": "",
+                    "top": "",
+                    "width": "",
+                    "height": "",
+                    "left": "",
+                    "z-index": "",
+                    "transition": "350ms filter ease-in-out, 350ms transform ease-in-out, 350ms border-radius ease-in-out, 750ms top ease-out, 750ms left ease-out, 500ms width ease-out, 750ms height ease-out, 750ms background-size ease-in-out"
+                });
+    const contentContact = () => {
+        $('.content.contact').removeClass('clicked');
+        $('.content.contact').css({ "display": "none"});
+    }
+    setTimeout(contentContact, 0);
+
+    } else {
+                /* IF NOT CLICKED ALREADY */
+            $contact.css({  "border-radius": "15px",
+                        "background-size": "15vw",
+                        "width": "65vw",
+                        "height": "25vw",
+                        "top": "14vh",
+                        "left": "15vw",
+                        "z-index": "1000",
+                        "transition": "350ms filter ease-in-out, 350ms transform ease-in-out, 350ms border-radius ease-in-out, 750ms top ease-out, 750ms left ease-out, 500ms width ease-out, 750ms height ease-out, 350ms background-size ease-in-out"
+                        })
+            $contact.addClass('clicked');
+            const contentContact = () => {
+                if ($contact.hasClass('clicked')) { // Checks if the coast is clear
+                    $('.content.contact').addClass('clicked');
+                    $('.content.contact').css({ "display": "flex"});
+                }
+            }
+            setTimeout(contentContact, 550);
+        }
+    }
+/*CONTACT SQUARE ACTION */
 
 /* FUNCTION CALLS */
 assignIDs();

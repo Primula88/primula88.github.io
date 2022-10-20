@@ -20,6 +20,7 @@
         /* SQUARE IMAGES */
         --bio-pic: url(./img/bio-pic.jpg);
         --github-pic: url(./img/github.jpg);
+        --contact-pic: url(./img/contact.jpg);
 
         /*SHADOWS */
 
@@ -48,11 +49,6 @@
 
         }
 
-    a {
-        text-decoration: none;
-        color: inherit;
-    }
-    
     html {
         height: 100%;
     }
@@ -214,6 +210,8 @@ p.caption-p {
 
 /* END BIO */
 
+/* GITHUB */
+
 #github {
     background-image: var(--github-pic);
     display: flex;
@@ -234,7 +232,7 @@ p.caption-p {
                 750ms width ease-out,
                 750ms height ease-out,
                 750ms background-size ease-in-out;
-    z-index: 1000;
+    z-index: 1001;
 }
 
 #github:hover {
@@ -249,7 +247,7 @@ p.caption-p {
 
 #github.clicked {
     filter: initial;
-    z-index: 1000;
+    z-index: 1001;
 }
 
 .content.github {
@@ -257,6 +255,7 @@ p.caption-p {
     flex-flow: column wrap;
     align-self: center;
     justify-content: center;
+    text-align: center;
     height: 100%;
     width: 54%;
     color: white;
@@ -284,6 +283,78 @@ p.caption-p {
 
 
 /* END GITHUB */
+
+/* CONTACT */ 
+
+#contact {
+    background-image: var(--contact-pic);
+    display: flex;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size: 5vw;
+    background-position: left center;
+    left: 46vw;
+    top: 8vh;
+    width: 5vw;
+    height: 5vw;
+    filter: var(--shadow-1);
+    transition: 350ms filter ease-in-out,
+                350ms transform ease-in-out,
+                350ms border-radius ease-in-out,
+                750ms top ease-out,
+                750ms left ease-out,
+                750ms width ease-out,
+                750ms height ease-out,
+                750ms background-size ease-in-out;
+    z-index: 1000;
+}
+
+#contact:hover {
+    transform: scale(1.2);
+    filter: var(--shadow-1b);
+}
+
+#contact.clicked:hover {
+    transform: initial;
+    filter: initial;
+}
+
+#contact.clicked {
+    filter: initial;
+    z-index: 1000;
+}
+
+.content.contact {
+    display: none;
+    align-items: center;
+    text-align: left;
+    height: 100%;
+    width: 54%;
+    color: white;
+    margin: 0 20vw;
+    font-size: 1.6vw;
+}
+
+.content.contact.clicked {
+    animation: fadeIn linear 500ms;
+    -webkit-animation: fadeIn linear 500ms;
+    -moz-animation: fadeIn linear 500ms;
+    -o-animation: fadeIn linear 500ms;
+    -ms-animation: fadeIn linear 500ms;
+}
+
+
+#contact-caption-content {
+    display: none;
+    flex-flow: column;
+}
+
+#contact-caption-content.active{
+    display: flex;
+}
+
+
+/* END CONTACT */
 
 
 .main-section {

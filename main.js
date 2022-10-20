@@ -1,4 +1,4 @@
-/* 1 -- GLOBAL CONCERNS*/
+/*GLOBAL CONCERNS*/
 // GLOBAL VARIABLES
 let $squares = $('.square');
 
@@ -11,7 +11,7 @@ const assignIDs = () => {
     console.log($idsArr);
 }
 
-/* 1-A -- UP BUTTON */
+/*UP BUTTON */
 // Function for Up-Button
 const upBtn = document.getElementById('upBtn');
 
@@ -29,9 +29,9 @@ const scrollFunction = () => {
 }
 
 window.onscroll = () => { scrollFunction() };
-/* END 1-A -- UP BUTTON */
+/*UP BUTTON */
 
-/* 2-B -- HOVERING ON SQUARES */
+/* HOVERING ON SQUARES */
 const hover = () => {
 
     $squares.each( function(){
@@ -59,9 +59,9 @@ const hover = () => {
         }
     })  
 }
-/* END 2-B -- HOVERING ON SQUARES */
+/* HOVERING ON SQUARES */
 
-/* 2-E -- BIO SQUARE ACTION */
+/* BIO SQUARE ACTION */
 const bio = () => {
     let $bio = $('#bio');
     if($bio.hasClass('clicked')) {
@@ -94,7 +94,6 @@ const bio = () => {
                         "transition": "350ms filter ease-in-out, 350ms transform ease-in-out, 350ms border-radius ease-in-out, 750ms top ease-out, 750ms left ease-out, 500ms width ease-out, 750ms height ease-out, 350ms background-size ease-in-out"
                         })
             $bio.addClass('clicked');
-            $('#contact').css({ "z-index": "1" });
             const contentBio = () => {
                 if ($bio.hasClass('clicked')) { // Checks if the coast is clear
                     $('.content.bio').addClass('clicked');
@@ -104,7 +103,52 @@ const bio = () => {
             setTimeout(contentBio, 550);
         }
     }
-/* END 2-E -- BIO CIRCLE ACTION */
+/*BIO SQUARE ACTION */
+
+
+/* GITHUB SQUARE ACTION */
+const github = () => {
+    let $github = $('#github');
+    if($github.hasClass('clicked')) {
+        /* IF CLICKED ALREADY */
+        $github.removeClass('clicked');
+        $github.css({  "border-radius": "",
+                    "background-size": "",
+                    "top": "",
+                    "width": "",
+                    "height": "",
+                    "left": "",
+                    "z-index": "",
+                    "transition": "350ms filter ease-in-out, 350ms transform ease-in-out, 350ms border-radius ease-in-out, 750ms top ease-out, 750ms left ease-out, 500ms width ease-out, 750ms height ease-out, 750ms background-size ease-in-out"
+                });
+    const contentGithub = () => {
+        $('.content.github').removeClass('clicked');
+        $('.content.github').css({ "display": "none"});
+    }
+    setTimeout(contentGithub, 0);
+
+    } else {
+                /* IF NOT CLICKED ALREADY */
+            $github.css({  "border-radius": "15px",
+                        "background-size": "26vw",
+                        "width": "65vw",
+                        "height": "25vw",
+                        "top": "14vh",
+                        "left": "15vw",
+                        "z-index": "1000",
+                        "transition": "350ms filter ease-in-out, 350ms transform ease-in-out, 350ms border-radius ease-in-out, 750ms top ease-out, 750ms left ease-out, 500ms width ease-out, 750ms height ease-out, 350ms background-size ease-in-out"
+                        })
+            $github.addClass('clicked');
+            const contentGithub = () => {
+                if ($github.hasClass('clicked')) { // Checks if the coast is clear
+                    $('.content.github').addClass('clicked');
+                    $('.content.github').css({ "display": "flex"});
+                }
+            }
+            setTimeout(contentGithub, 550);
+        }
+    }
+/*GITHUB SQUARE ACTION */
 
 /* FUNCTION CALLS */
 assignIDs();

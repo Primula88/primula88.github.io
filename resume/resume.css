@@ -68,7 +68,10 @@
     }
 }
 
-#homeCSS { 
+#homeClass { 
     color: white;
 }
 
+#testClass {
+  color: white;
+}
